@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tao danh sach</title>
+</head>
+<body>
+              <h1>Bảng thống kê danh sách sản phẩm</h1>
+              <input id="newProduct" type="text"><button type="button" onclick="addNewProduct()">Add</button>
+
+                  <table border="1px">
+                        <tr>
+                            <td>Tên Sản Phẩm</td>
+                            <td>Thao Tác</td>
+                        </tr>
+                        <tbody id="NhapSp">
+                            <tr>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                        </tbody>
+                  </table>
+              <button type="button" onclick="showALL()">Hiển thị danh sách sản phẩm</button>
+
+<script>
+      let sp =["SamSung","Apple","MacBook"];
+      function showALL(){
+          let content = "";
+          for(let i=0;i<sp.length;i++){
+            content += "<tr>" +
+              "<td>" + sp[i] +"</td>" +
+              "<td><button onclick='Delete("+i+")'>Xoá</button>"+
+               "<button onclick='Update("+i+")'>Sửa</button></td>" +
+            "</tr>"
+          }
+          document.getElementById("NhapSp").innerHTML = content;
+      }
+      function addNewProduct(){
+        let newP = document.getElementById("newProduct").value;
+        sp.push(newP);
+        showALL();
+      }
+      function Delete(vitri){
+        sp.splice(vitri,1);
+        showALL();
+      }
+      function Update(vitri){
+        let newP = prompt("Nhập tên sản phẩm mới",sp[vitri]);
+        sp[vitri]= newP;
+        showALL();
+      }
+</script>
+</body>
+</html>
