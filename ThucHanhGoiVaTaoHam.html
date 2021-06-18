@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thuc goi va tao ham</title>
+</head>
+<body>
+<script>
+  function processConfirm(Answer){
+    let DapAn ="";
+    if (Answer){
+        DapAn = "Co! Hay bat dau voi 1 tran dau tuyet voi.";}
+      else{
+        DapAn = "Chung toi co the lam sau.";
+      }
+    return(DapAn);
+  }
+  let XacNhanDapAn = confirm("Ban co muon choi game?");
+  let Traloi = processConfirm(XacNhanDapAn);
+  alert(Traloi);
+</script>
+</body>
+</html>
