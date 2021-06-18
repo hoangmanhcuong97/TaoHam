@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chuyen doi nhiet do</title>
+</head>
+<body>
+    <form>
+          <p>
+            <label>Fahrenheit:</label>
+            <input id="NhapDoF" type="number" placeholder="Fahrenheit"
+            oninput ="ChuyenDoiNhietDo(this.value)";
+            onchange ="ChuyenDoiNhietDo(this.value)";>
+          </p>
+          <p>Celsius: <span id="outputCelsius"></span> </p>
+    </form>
+    <script>
+        function ChuyenDoiNhietDo(giaTri){
+          giaTri = parseFloat(giaTri);
+          document.getElementById("outputCelsius").innerHTML=(giaTri-32)/1.8 +" do C";
+        }
+    </script>
+</body>
+</html>
